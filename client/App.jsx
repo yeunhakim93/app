@@ -16,7 +16,7 @@ const App = () => {
   const [devices, setDevices] = useState({});
   const [interfaces, setInterfaces] = useState({});
   const [currDevice, setCurrDevice] = useState(null);
-
+  
   const getDevices = () => {
     if (!token) return;
     fetch ('api/invite/getDevices', {
@@ -76,7 +76,7 @@ const App = () => {
 
   return (
     <>
-      <Header setCurrDevice = {setCurrDevice} logout = {logout}/>
+      <Header setCurrDevice = {setCurrDevice} logout = {logout} loggedIn={loggedIn}/>
       {loggedIn && (
         <div className="main">
           <Nav 

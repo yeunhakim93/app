@@ -3,6 +3,8 @@ body {
   background-color: rgb(245, 245, 245);
   font-family: 'League Spartan', sans-serif;
 }
+
+/* header */
 header {
   height: 6rem;
   align-items: center;
@@ -12,19 +14,11 @@ header {
   justify-content: space-between;
   padding: 0 1.3rem;
 }
-footer {
+.top {
   position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  padding-left: 1rem;
-  background-color: rgb(46, 46, 46);
-  color: rgb(218, 218, 218);
-  font-size: 0.9rem;
-  justify-content: center;
+  top: 0;
+  height: 7rem;
+  z-index: 1;
 }
 .color-bar {
   width: 100%;
@@ -36,6 +30,7 @@ footer {
   height: 160%;
 }
 .main {
+  top: 7rem;
   display: flex;
   position: relative;
 }
@@ -220,4 +215,20 @@ footer {
   color: rgb(183, 183, 183);
   transition: color 0.2s ease-out;
   cursor: pointer;
+}
+
+/* footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-left: 1rem;
+  background-color: rgb(46, 46, 46);
+  color: rgb(218, 218, 218);
+  font-size: 0.9rem;
+  justify-content: center;
 }

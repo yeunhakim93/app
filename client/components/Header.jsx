@@ -4,7 +4,7 @@ import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import invitelogo from "../assets/INVITE.png"
 
 const Header = (props) => (
-  <>
+  <div className="top">
     <div className="color-bar">
       <svg width="1600" height="17" viewBox="0 0 1600 17" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fillRule="evenodd" clipRule="evenodd" d="M896.121 -0.464111L1655.28 0.396551L1398.84 125.528L1154.35 125.251L896.121 -0.464111Z" fill="#F28521"/>
@@ -15,14 +15,13 @@ const Header = (props) => (
       </svg>
     </div>
     <header>
-      
       <img src={invitelogo} onClick={()=>{props.setCurrDevice(null)}} style={{cursor:'pointer'}}></img>
-      <div className="logout-button" onClick={props.logout}>
-        <FontAwesomeIcon icon={faArrowRightFromBracket} style={{marginRight:"0.5rem"}}/>
-        Logout
-      </div>
+      {props.loggedIn && <div className="logout-button" onClick={props.logout}>
+          <FontAwesomeIcon icon={faArrowRightFromBracket} style={{marginRight:"0.5rem"}}/>
+          Logout
+        </div> }
     </header>
-  </>
+  </div>
 );
 
 export default Header;

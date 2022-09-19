@@ -1,3 +1,4 @@
+const axios = require('axios');
 const deviceController = {};
 require('dotenv').config();
 
@@ -9,22 +10,21 @@ deviceController.getDevices = (req, res, next) => {
     message: { err: "Token is required"}
   });
 
-  fetch (`https://api.invitenetworks.com/v0/${process.env.ORG_ID}/devices/`, {
+  axios.get(`https://api.invitenetworks.com/v0/${process.env.ORG_ID}/devices/`, {
     headers: {
       Authorization:"Bearer " + token,
       accept: 'application/json'
     }
   })
-  .then (res => {
-    if (!res.ok || res.status !== 200) throw new Error(res.status);
-    return res.json()
-  })
-  .then(data => {
-    res.locals.devices = data;
+  .then (response => {
+    res.locals.devices = response.data;
     return next();
   })
   .catch(err => {
-    next(err);
+    next({
+      log: 'Error in deviceController.getDevices',
+      message: { err: "Devices were not obtained"}
+    });
   })
 }
 
@@ -34,22 +34,21 @@ deviceController.getInterfaces = (req, res, next) => {
     log: 'Error in deviceController.getDevices',
     message: { err: "Token is required"}
   });
-  fetch (`https://api.invitenetworks.com/v0/${process.env.ORG_ID}/interfaces/${req.params.interfaceId}`, {
+  axios.get(`https://api.invitenetworks.com/v0/${process.env.ORG_ID}/interfaces/${req.params.interfaceId}`, {
     headers: {
       Authorization:"Bearer " + token,
       accept: 'application/json'
     }
   })
-  .then (res => {
-    if (!res.ok || res.status !== 200) throw new Error(res.status);
-    return res.json();
-  })
-  .then(data => {
-    res.locals.interface = data;
+  .then (response => {
+    res.locals.interface = response.data;
     return next();
   })
   .catch(err => {
-    next(err);
+    next({
+      log: 'Error in deviceController.getInterfaces',
+      message: { err: "Interfaces were not obtained"}
+    });
   })
 }
 module.exports = deviceController;
