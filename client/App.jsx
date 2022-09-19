@@ -11,10 +11,8 @@ import LandingInfo from "./components/LandingInfo"
 
 
 const App = () => {
-  const [loggedIn, setLoggedIn] = useState(true);
-  const [token, setToken] = useState("2176c70d2d6bfec6f5e2b853a51a19ac1cde037b30b33488a742ac69f01bc37b");
-  // const [loggedIn, setLoggedIn] = useState(false);
-  // const [token, setToken] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [token, setToken] = useState("");
   const [devices, setDevices] = useState({});
   const [interfaces, setInterfaces] = useState({});
   const [currDevice, setCurrDevice] = useState(null);
