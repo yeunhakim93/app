@@ -18,6 +18,7 @@ const App = () => {
   const [currDevice, setCurrDevice] = useState(null);
 
   const getDevices = () => {
+    if (!token) return;
     fetch ('api/invite/getDevices', {
       method: "GET",
       headers: {

@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
-        // entry point of our app
         './client/App.jsx'
       ],
   output: {
@@ -23,7 +22,7 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     static: {
-      directory: path.resolve(__dirname, 'dist'),
+      directory: path.resolve(__dirname, './client/assets'),
       publicPath: '/'
     },
 
@@ -50,14 +49,14 @@ module.exports = {
         use: ['style-loader', 'css-loader'],        
       },
       {
-        test: /\.(svg)$/i,
+        test: /\.(png|jp(e*)g|svg)$/,
         loader: 'file-loader'
       }
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      // favicon: path.resolve(__dirname, './client/assets/favicon.ico'),
+      favicon: path.resolve(__dirname, './client/assets/faviconV2.ico'),
       template: './index.html'
     })
   ]

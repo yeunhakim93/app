@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import invitelogo from "../assets/INVITE.png"
 
 const Header = (props) => (
   <>
@@ -14,7 +15,8 @@ const Header = (props) => (
       </svg>
     </div>
     <header>
-      <img src="INVITE.png" onClick={()=>{props.setCurrDevice(null)}} style={{cursor:'pointer'}}></img>
+      
+      <img src={invitelogo} onClick={()=>{props.setCurrDevice(null)}} style={{cursor:'pointer'}}></img>
       <div className="logout-button" onClick={props.logout}>
         <FontAwesomeIcon icon={faArrowRightFromBracket} style={{marginRight:"0.5rem"}}/>
         Logout
