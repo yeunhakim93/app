@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  background-color: rgb(245, 245, 245);
+  font-family: 'League Spartan', sans-serif;
+}
+header {
+  height: 6rem;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 1.3rem;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-left: 1rem;
+  background-color: rgb(46, 46, 46);
+  color: rgb(218, 218, 218);
+  font-size: 0.9rem;
+  justify-content: center;
+}
+.color-bar {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.color-bar svg {
+  width: 100%;
+  height: 160%;
+}
+.main {
+  display: flex;
+  position: relative;
+}
+
+/* Navigation */
+.nav-bar {
+  position: fixed;
+  width: 18rem;
+  height: calc(100% - 8.5rem);
+  overflow: auto;
+  background-color: rgb(218, 218, 218);
+}
+.nav-ul {
+  padding: 1rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.nav-item {
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  height: 3rem;
+  text-align: center;
+  font-weight: 500;
+  color: rgb(86, 85, 97);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.106);
+  transition: box-shadow 0.1s ease-out;
+  transition: background-color 0.1s ease-out;
+  transition: height 0.05s ease-out;
+}
+.nav-item:hover {
+  height: 5.5rem;
+  background-color: rgba(255, 225, 209, 0.2);
+  box-shadow: 0 0.1rem 0.3rem 0.01rem rgba(0, 0, 0, 0.427);
+  transition: box-shadow 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+  transition: height 0.05s ease-in;
+}
+.nav-item:active {
+  height: 5.5rem;
+  background-color: rgb(253, 126, 59);
+  box-shadow: 0 0.1rem 0.3rem 0.01rem rgba(0, 0, 0, 0.427);
+  transition: box-shadow 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+  transition: height 0.05s ease-in;
+}
+#active {
+  height: 5.5rem;
+  background-color: rgb(253, 126, 59);
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  justify-content: center;
+  transition: box-shadow 0.1s ease-out;
+  transition: background-color 0.1s ease-out;
+  transition: height 0.05s ease-out;
+}
+.stub-item {
+  font-weight: 200;
+  margin: 0.1rem;
+}
+.nav-item .selected {
+  background-color: rgba(255, 225, 209, 0.2);
+}
+.fa-icon {
+  margin-right: 0.5rem;
+}
+
+/* Interfaces */
+.items-container {
+  margin-left: 18rem;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  height: calc(100% - 8.5rem);
+  width: 80%;
+  font-weight: 300;
+}
+.item-container {
+  margin: 0.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.106);
+  border-radius: 1rem;
+  padding: 1.5rem 3rem;
+}
+.device {
+  background-color: rgb(227, 237, 226);
+}
+.interface {
+  background-color: rgb(226, 231, 237);
+}
+.property-name {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: rgb(112, 112, 112);
+  margin-right: 0.5rem;
+}
+
+
+/* Landing page */
+.landing-info-container {
+  margin-left: 18rem;
+  padding: 4rem;
+  font-size: 1.2rem;
+  width: 80%;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.landing-image {
+  max-width: 45rem;
+  width: 80%;
+  border-radius: 1rem;
+}
+.caption {
+  max-width: 45rem;
+  width: 80%;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+
+/* Authentication */
+.login-container {
+  margin: 10rem auto;
+  width: 30rem;
+  height: 15rem;
+}
+.login-form {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  margin: auto;
+  gap: 0.7rem;
+}
+.login-form input {
+  height: 3rem;
+  border-radius: 0.4rem;
+  border-style: none;
+  font-size: 1.1rem;
+  padding: 0.1rem 0.9rem;
+}
+.login-form input[type=submit] {
+  width: 8rem;
+  height: 2.3rem;
+  margin-top: 0.3rem;
+  margin-right: 0;
+  align-self: center;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: rgb(87, 145, 65);
+  color: white;
+  cursor: pointer;
+}
+.login-form input:hover, input:focus {
+  box-shadow: 0.05rem 0.05rem 0.25rem 0.12rem rgba(0, 0, 0, 0.1);
+}
+.error-message {
+  text-align: center;
+  color: rgb(113, 58, 38);
+}
+.logout-button {
+  color: rgb(45, 45, 45);
+  transition: color 0.2s ease-out;
+}
+.logout-button:hover {
+  color: rgb(183, 183, 183);
+  transition: color 0.2s ease-out;
+  cursor: pointer;
+}
